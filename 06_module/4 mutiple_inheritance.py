@@ -2,6 +2,7 @@ class Family:
     def __init__(self, address) -> None:
         self.address = address
 
+
 class School:
     def __init__(self, id, level) -> None:
         self.id = id
@@ -16,3 +17,10 @@ class Student(Family, School, Sports):
         School.__init__(self, id, level)
         Sports.__init__(self, game)
         Family.__init__(self, address)
+            
+
+        
+
+
+s1=Student('badda', 23, '6a', 'coc')
+print(s1)

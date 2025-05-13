@@ -15,9 +15,9 @@ class Monkey(Animal):
         self.name = name
         super().__init__()
 
-    def eat(self):
+    def eat(self):             # abostrac er funtion ekhane ditei hobe
         print('Hey na nana, I am eating banana')
-    def move(self):
+    def move(self):            # abostrac er funtion ekhane ditei hobe
         print('Hanging on the branches')
 
 layka = Monkey('lucky')

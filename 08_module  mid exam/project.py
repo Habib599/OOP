@@ -17,21 +17,22 @@ class Hall(Star_Cinema):
         s1 = (id, movie_name, time)
         self.__show_list.append(s1)
         self.seats[id] = []
-        for row in range(self.rows):
+        for row in range(self.rows): # make raw and colom and apend seats......
             row_seats = []
             for col in range(self.cols):
                 row_seats.append(0)
             self.seats[id].append(row_seats)
+            
 
     def book_seats(self, id, sit_r_c):
         if id in self.seats:
             for row, col in sit_r_c:
-                if 0 <= row < self.rows and 0 <= col < self.cols:
+                if 0 <= row < self.rows and 0 <= col < self.cols: #0 to 7 er moodhe
                     if self.seats[id][row][col] == 0:
                         self.seats[id][row][col] = 1
                         print(f"Seat ({row}, {col}) booked for show {id} ")
                     else:
-                        print(f"Seat ({row}, {col}) booked for show {id} ")
+                        print(f"........Already Seat ({row}, {col}) booked for show {id} ")
                 else:
                     print(f"Invalid seat")
         else:
@@ -42,6 +43,7 @@ class Hall(Star_Cinema):
         for show in self.__show_list:
             print(f"Show ID: {show[0]}, Movie: {show[1]}, Time: {show[2]}")
         print()
+        
     def view_available_seats(self, id):
         if id in self.seats:
             print(f"Available seats for show {id}:")
@@ -62,8 +64,9 @@ class Hall(Star_Cinema):
 hal = Hall(7,7,1)
 
 hal.entry_show(1, "Jawan ", "09:00 AM")
-hal.entry_show(2, "Pushpa 2", "12:00 PM")
-hal.entry_show(3, "Mission Imposible 7", "03:00 PM")
+#hal.entry_show(2, "Pushpa 2", "12:00 PM")
+#hal.entry_show(3, "Mission Imposible 7", "03:00 PM")
+
 
 while True:
     print('1: View All Show Today')
